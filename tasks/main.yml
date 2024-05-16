@@ -20,6 +20,6 @@
   become: true
   ansible.builtin.template:
     src: "{{ nginx_conf_src }}"
-    dest: /etc/nginx/conf.d/{{ nginx_conf_dest }}
+    dest: /etc/nginx/sites-enabled/{{ nginx_conf_dest }}
     mode: "0644"
   notify: Restart nginx
