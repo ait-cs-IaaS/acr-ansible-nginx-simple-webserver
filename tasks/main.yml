@@ -16,6 +16,13 @@
   loop_control:
     loop_var: default_path
 
+- name: Ensure /etc/nginx/sites-enabled exists
+  become: true
+  ansible.builtin.file:
+    path: /etc/nginx/sites-enabled
+    state: directory
+    recurse: true
+
 - name: Add NGINX configuration file
   become: true
   ansible.builtin.template:
